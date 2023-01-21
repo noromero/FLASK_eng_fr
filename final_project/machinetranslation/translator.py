@@ -22,13 +22,14 @@ def englishToFrench(englishText):
   frenchText=language_translator.translate(
       text=englishText,
       model_id='en-fr').get_result()
-  return frenchText
+  return frenchText['translations'][0]['translation']
 
 """ This function converts french to english"""
 def frenchToEnglish(frenchText):
   englishText=language_translator.translate(
       text=frenchText,
       model_id='fr-en').get_result()
-  return englishText
+  return englishText['translations'][0]['translation']
+  
   
   
